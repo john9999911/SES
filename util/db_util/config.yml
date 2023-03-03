@@ -1,0 +1,11 @@
+host: localhost
+port: 3306
+user: root
+password: root
+db: ses_db
+charset: utf8
+useUnicode: true
+characterEncoding: utf-8
+serverTimezone: UTC
+useSSL: false
+allowPublicKeyRetrieval: true
