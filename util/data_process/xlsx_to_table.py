@@ -9,26 +9,43 @@ from util.db_util.db_connector import get_con, execute_sql
 # 第二行开始为数据
 def convert(path: str):
     sqls = []
+    sql = ""
     # 读取xlsx文件
     df = pd.read_excel(path, sheet_name=0)
-    for table_name, table_desc in zip(df['表名'], df['表描述']):
-        if pd.isna(table_name):
-            break
-        # 创建数据库表
-        create_table_sql = 'create table if not exists ' + table_name + ' ('
-        # 读取表字段信息
-        table_df = df[df['表名'] == table_name]
-        for field_name, field_type, field_desc in zip(table_df['字段'], table_df['类型'], table_df['描述']):
-            if pd.isna(field_type):
-                field_type = 'Integer'
-            if pd.isna(field_desc):
-                field_desc = ''
-            create_table_sql += field_name + ' ' + field_type + ' comment \'' + field_desc + '\','
-        create_table_sql = create_table_sql[:-1] + ') comment \'' + table_desc + '\';'
-        print(create_table_sql)
-        sqls.append(create_table_sql)
+    table_name = ""
+    table_desc = ""
+    realKey = ""
+    for index, row in df.iterrows():
+        # row[0] 不为nan时，说明是表信息
+        if not pd.isna(row[0]):
+            if sql != "":
+                sql += f"    PRIMARY KEY (id))"
+                sqls.append(sql)
+                print(sql)
+                sql = ""
+            table_name = row[0]
+            table_desc = row[1]
+            sql = f"CREATE TABLE {table_name} ("
+        field_name = row[2]
+        field_type = row[3]
+        field_desc = row[4]
+        # field_name 已经存在时，跳过
+        if field_name in sql.split(" "):
+            continue
+        if pd.isna(field_type):
+            field_type = "int(100)"
+        # # 如果类型没有写长度，添加长度
+        # if field_type.strip()[-1] != ')' and "datetime" not in field_type:
+        #     field_type += "(100)"
+        # if field_type == "datetime":
+        #     field_type += "(6)"
+        if pd.isna(field_desc):
+            field_desc = ""
+        sql += f"    {field_name} {field_type} ,"
+
     # 执行sql语句
     execute_sql(get_con(), sqls)
+    # print(sqls)
 
 
 if __name__ == '__main__':
