@@ -33,8 +33,12 @@ def execute_sql(conn, sqls: list):
 
 
 def get_con():
+    # 读取当前文件路径
+    pre_path = os.path.abspath(__file__)
+    path = os.path.join(os.path.dirname(pre_path), 'config.yml')
+    print(path)
     # 读取配置
-    db_config = read_yml('../db_util/config.yml')
+    db_config = read_yml(path)
     # 连接数据库
     conn = connect_db(db_config)
     return conn
