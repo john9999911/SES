@@ -31,3 +31,7 @@ class job_finish:
     @staticmethod
     def get_all():
         return get_data(job_finish)
+
+    @staticmethod
+    def get_dataframe(activity_log):
+        return get_data(activity_log)

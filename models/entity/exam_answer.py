@@ -48,3 +48,7 @@ class exam_answer:
     @staticmethod
     def get_all():
         return get_data(exam_answer)
+
+    @staticmethod
+    def get_dataframe(activity_log):
+        return get_data(activity_log)

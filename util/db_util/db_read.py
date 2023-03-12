@@ -1,3 +1,5 @@
+import pandas as pd
+
 from util.db_util.db_connector import get_con
 
 
@@ -13,3 +15,11 @@ def get_data(cls):
     con.close()
     # 将每行数据转换为类实例
     return [cls(*row) for row in data]
+
+
+def get_dataframe(cls):
+    con = get_con()
+    sql = "select * from " + "t_stat_{}".format(cls.__name__)
+    df = pd.read_sql(sql, con)
+    con.close()
+    return df

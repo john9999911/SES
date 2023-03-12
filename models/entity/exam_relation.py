@@ -43,3 +43,7 @@ class exam_relation:
     @staticmethod
     def get_all():
         return get_data(exam_relation)
+
+    @staticmethod
+    def get_dataframe(activity_log):
+        return get_data(activity_log)

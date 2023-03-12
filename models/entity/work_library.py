@@ -32,3 +32,7 @@ class work_library:
     @staticmethod
     def get_all():
         return get_data(work_library)
+
+    @staticmethod
+    def get_dataframe(activity_log):
+        return get_data(activity_log)
