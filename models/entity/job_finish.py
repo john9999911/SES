@@ -12,6 +12,7 @@ from util.db_util.db_read import get_data
 # job_id
 # clazzid
 # fid
+# 这是任务点完成记录表 t_stat_job_finish
 
 class job_finish:
     # 带有time的参数，需要在参数后面加上datetime

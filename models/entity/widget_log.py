@@ -13,6 +13,8 @@
 # attend_count
 # send_to_student
 # fid
+# 这是课堂活动发布表 t_stat_widget_log
+
 from datetime import datetime
 
 from util.db_util.db_read import get_data

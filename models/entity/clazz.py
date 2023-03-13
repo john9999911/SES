@@ -16,6 +16,7 @@ from util.db_util.db_read import get_data
 # is_deleted
 # clazzid
 # fid
+# 这是班级表 t_stat_clazz
 
 class clazz:
     # 带有time的参数，需要在参数后面加上datetime

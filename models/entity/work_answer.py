@@ -14,6 +14,7 @@
 # isDeleted
 # fid
 # clazzid
+# 这是学生作业提交记录表 t_stat_work_answer
 from datetime import datetime
 
 from util.db_util.db_read import get_data

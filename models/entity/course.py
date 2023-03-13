@@ -15,6 +15,7 @@ from util.db_util.db_read import get_data
 # group_name
 # courseid
 # fid
+# 这是课程表 t_stat_course
 
 class course:
     # 带有time的参数，需要在参数后面加上datetime

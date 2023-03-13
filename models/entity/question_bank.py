@@ -9,6 +9,7 @@
 # question_id
 # type
 # fid
+# 这是试题表 t_stat_question_bank
 from datetime import datetime
 
 from util.db_util.db_read import get_data

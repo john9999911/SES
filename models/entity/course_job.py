@@ -13,6 +13,7 @@ from util.db_util.db_read import get_data
 # name
 # job_id
 # fid
+# 这是课程任务点表 t_stat_course_job
 
 class course_job:
     # 带有time的参数，需要在参数后面加上datetime

@@ -10,6 +10,7 @@
 # work_id
 # work_library_id
 # fid
+# 这是已发布作业表 t_stat_work_relation
 from datetime import datetime
 
 from util.db_util.db_read import get_data

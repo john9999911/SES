@@ -8,6 +8,7 @@
 # isDeleted
 # work_library_id
 # fid
+# 这是作业表 t_stat_work_library
 from datetime import datetime
 
 from util.db_util.db_read import get_data

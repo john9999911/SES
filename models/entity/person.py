@@ -8,6 +8,7 @@
 # role
 # fid
 # fid
+#这是用户信息表 t_stat_person
 from datetime import datetime
 
 from util.db_util.db_read import get_data
