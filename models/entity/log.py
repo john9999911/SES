@@ -7,6 +7,8 @@
 # clazzid
 # type
 # fid
+# 这是其它活动流水  t_stat_log
+
 from datetime import datetime
 
 from util.db_util.db_read import get_data

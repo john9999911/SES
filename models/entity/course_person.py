@@ -13,6 +13,7 @@ from util.db_util.db_read import get_data
 # isDeleted
 # role
 # fid
+# 这是人课关系表 t_stat_course_person
 
 class course_person:
     # 带有time的参数，需要在参数后面加上datetime

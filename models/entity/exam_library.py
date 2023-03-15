@@ -13,6 +13,7 @@ from util.db_util.db_read import get_data
 # isDeleted
 # paper_library_id
 # fid
+# 这是考试表 t_stat_exam_library
 
 class exam_library:
     # 带有time的参数，需要在参数后面加上datetime

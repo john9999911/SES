@@ -12,6 +12,7 @@ from util.db_util.db_read import get_data
 # clazzid
 # score
 # fid
+# 这是学生成绩表 t_stat_student_score
 
 class student_score:
     # 带有time的参数，需要在参数后面加上datetime

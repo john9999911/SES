@@ -20,7 +20,7 @@ from util.db_util.db_read import get_data
 # fid
 # clazzid
 # answerid
-
+# 这是学生考试提交记录表 t_stat_exam_answer
 
 class exam_answer:
     # 带有time的参数，需要在参数后面加上datetime

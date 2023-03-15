@@ -12,6 +12,8 @@
 # reply_id
 # ip
 # fid
+# 这是讨论流水表 t_stat_bbs_log
+
 from datetime import datetime
 
 from util.db_util.db_read import get_data

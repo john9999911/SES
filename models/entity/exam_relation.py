@@ -18,6 +18,7 @@ from util.db_util.db_read import get_data
 # exam_id
 # paper_library_id
 # fid
+#这是已发布考试表 t_stat_exam_relation
 
 class exam_relation:
     # 带有time的参数，需要在参数后面加上datetime
