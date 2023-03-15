@@ -4,3 +4,4 @@ data = activity_log.get_all()
 for d in data:
     print(d.id)
 
+# 测试
