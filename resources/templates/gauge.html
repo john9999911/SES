@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height">
+    <title>仪表盘</title>
+    <style>::-webkit-scrollbar{display:none;}html,body{overflow:hidden;height:100%;margin:0;}</style>
+</head>
+<body>
+<div id="gauge"></div>
+<script>/*Fixing iframe window.innerHeight 0 issue in Safari*/document.body.clientHeight;</script>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.5.1/dist/g2.min.js"></script>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.10.1/dist/data-set.min.js"></script>
+<script src="https://gw.alipayobjects.com/os/antv/assets/lib/jquery-3.2.1.min.js"></script>
+<script>
+    var Shape = G2.Shape;
+    // 自定义Shape 部分
+    Shape.registerShape('point', 'pointer', {
+        drawShape: function drawShape(cfg, group) {
+            var center = this.parsePoint({ // 获取极坐标系下画布中心点
+                x: 0,
+                y: 0
+            });
+            // 绘制指针
+            group.addShape('line', {
+                attrs: {
+                    x1: center.x,
+                    y1: center.y,
+                    x2: cfg.x,
+                    y2: cfg.y,
+                    stroke: cfg.color,
+                    lineWidth: 5,
+                    lineCap: 'round'
+                }
+            });
+            return group.addShape('circle', {
+                attrs: {
+                    x: center.x,
+                    y: center.y,
+                    r: 9.75,
+                    stroke: cfg.color,
+                    lineWidth: 4.5,
+                    fill: '#fff'
+                }
+            });
+        }
+    });
+
+    var data = [{
+        value: 5.6
+    }];
+    var chart = new G2.Chart({
+        container: 'gauge',
+        forceFit: true,
+        height: window.innerHeight,
+        padding: [0, 0, 30, 0]
+    });
+    chart.source(data);
+
+    chart.coord('polar', {
+        startAngle: -9 / 8 * Math.PI,
+        endAngle: 1 / 8 * Math.PI,
+        radius: 0.75
+    });
+    chart.scale('value', {
+        min: 0,
+        max: 9,
+        tickInterval: 1,
+        nice: false
+    });
+
+    chart.axis('1', false);
+    chart.axis('value', {
+        zIndex: 2,
+        line: null,
+        label: {
+            offset: -16,
+            textStyle: {
+                fontSize: 18,
+                textAlign: 'center',
+                textBaseline: 'middle'
+            }
+        },
+        subTickCount: 4,
+        subTickLine: {
+            length: -8,
+            stroke: '#fff',
+            strokeOpacity: 1
+        },
+        tickLine: {
+            length: -17,
+            stroke: '#fff',
+            strokeOpacity: 1
+        },
+        grid: null
+    });
+    chart.legend(false);
+    chart.point().position('value*1').shape('pointer').color('#1890FF').active(false);
+
+    // 绘制仪表盘背景
+    chart.guide().arc({
+        zIndex: 0,
+        top: false,
+        start: [0, 0.945],
+        end: [9, 0.945],
+        style: { // 底灰色
+            stroke: '#CBCBCB',
+            lineWidth: 18
+        }
+    });
+    // 绘制指标
+    chart.guide().arc({
+        zIndex: 1,
+        start: [0, 0.945],
+        end: [data[0].value, 0.945],
+        style: {
+            stroke: '#1890FF',
+            lineWidth: 18
+        }
+    });
+    // 绘制指标数字
+    chart.guide().html({
+        position: ['50%', '95%'],
+        html: '<div style="width: 300px;text-align: center;">' + '<p style="font-size: 20px; color: #545454;margin: 0;">合格率</p>' + '<p style="font-size: 36px;color: #545454;margin: 0;">' + data[0].value * 10 + '%</p>' + '</div>'
+    });
+
+    chart.render();
+</script>
+</body>
+</html>
