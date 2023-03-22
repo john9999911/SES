@@ -7,7 +7,6 @@
 # login_name
 # role
 # fid
-# fid
 #这是用户信息表 t_stat_person
 from datetime import datetime
 
