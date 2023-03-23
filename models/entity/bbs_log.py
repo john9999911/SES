@@ -1,19 +1,3 @@
-# id
-# insert_time
-# create_time
-# last_modify_time
-# personid
-# courseid
-# clazzid
-# bbs_id
-# topic_id
-# parent_id
-# role
-# reply_id
-# ip
-# fid
-# 这是讨论流水表 t_stat_bbs_log
-
 from datetime import datetime
 
 from util.db_util.db_read import get_data

@@ -1,23 +1,6 @@
 from datetime import datetime
-
 from util.db_util.db_read import get_data
 
-
-# id
-# insert_time
-# create_time
-# last_modify_time
-# type
-# name
-# personid
-# courseid
-# url
-# size
-# object_id
-# isDeleted
-# data_id
-# fid
-# 这是课程资源表 t_stat_course_data
 
 class course_data:
     def __init__(self, id, insert_time: datetime, create_time: datetime, last_modify_time: datetime, type, name,

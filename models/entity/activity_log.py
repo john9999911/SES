@@ -1,18 +1,3 @@
-# id
-# insert_time
-# create_time
-# last_modify_time
-# dtype
-# activity_id
-# personid
-# courseid
-# clazzid
-# status
-# ip
-# attend_id
-# attend_time
-# fid
-# 这是 课堂活动参与表 t_stat_activity_log
 from datetime import datetime
 
 from util.db_util.db_read import get_data
