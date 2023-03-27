@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from util.db_util.db_read import get_data
+from util.db_util.db_read import get_data, get_dataframe
 
 
 class activity_log:
@@ -28,4 +28,4 @@ class activity_log:
 
     @staticmethod
     def get_dataframe():
-        return get_data(activity_log)
+        return get_dataframe(activity_log)

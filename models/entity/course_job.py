@@ -21,4 +21,4 @@ class course_job:
 
     @staticmethod
     def get_dataframe():
-        return get_data()
+        return get_dataframe(course_job)

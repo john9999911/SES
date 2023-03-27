@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from util.db_util.db_read import get_data
+from util.db_util.db_read import get_data, get_dataframe
 
 
 class widget_log:
@@ -27,4 +27,4 @@ class widget_log:
 
     @staticmethod
     def get_dataframe():
-        return get_data()
+        return get_dataframe(widget_log)

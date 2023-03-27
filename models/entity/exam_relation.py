@@ -1,8 +1,6 @@
 import datetime
 
-from util.db_util.db_read import get_data
-
-
+from util.db_util.db_read import get_data, get_dataframe
 
 
 class exam_relation:
@@ -29,4 +27,4 @@ class exam_relation:
 
     @staticmethod
     def get_dataframe():
-        return get_data()
+        return get_dataframe(exam_relation)

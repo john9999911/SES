@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from util.db_util.db_read import get_data
+from util.db_util.db_read import get_data, get_dataframe
 
 
 class question_bank:
@@ -23,4 +23,4 @@ class question_bank:
 
     @staticmethod
     def get_dataframe():
-        return get_data()
+        return get_dataframe(question_bank)

@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from util.db_util.db_read import get_data
+from util.db_util.db_read import get_data, get_dataframe
 
 
 class work_relation:
@@ -24,4 +24,4 @@ class work_relation:
 
     @staticmethod
     def get_dataframe():
-        return get_data()
+        return get_dataframe(work_relation)

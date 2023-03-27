@@ -28,4 +28,4 @@ class exam_answer:
 
     @staticmethod
     def get_dataframe():
-        return get_data()
+        return get_dataframe(exam_answer)

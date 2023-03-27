@@ -26,4 +26,4 @@ class bbs_log:
 
     @staticmethod
     def get_dataframe():
-        return get_data()
+        return get_dataframe(bbs_log)

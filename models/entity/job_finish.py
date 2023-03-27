@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from util.db_util.db_read import get_data
+from util.db_util.db_read import get_data, get_dataframe
 
 
 class job_finish:
@@ -21,4 +21,4 @@ class job_finish:
 
     @staticmethod
     def get_dataframe():
-        return get_data()
+        return get_dataframe(job_finish)
