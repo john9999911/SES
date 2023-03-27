@@ -27,5 +27,5 @@ class work_answer:
         return get_data(work_answer)
 
     @staticmethod
-    def get_dataframe(activity_log):
-        return get_data(activity_log)
+    def get_dataframe():
+        return get_data()

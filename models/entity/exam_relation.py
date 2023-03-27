@@ -28,5 +28,5 @@ class exam_relation:
         return get_data(exam_relation)
 
     @staticmethod
-    def get_dataframe(activity_log):
-        return get_data(activity_log)
+    def get_dataframe():
+        return get_data()

@@ -20,5 +20,5 @@ class log:
         return get_data(log)
 
     @staticmethod
-    def get_dataframe(activity_log):
-        return get_data(activity_log)
+    def get_dataframe():
+        return get_data()

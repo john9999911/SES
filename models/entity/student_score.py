@@ -20,5 +20,5 @@ class student_score:
         return get_data(student_score)
 
     @staticmethod
-    def get_dataframe(activity_log):
-        return get_data(activity_log)
+    def get_dataframe():
+        return get_data()
