@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from util.db_util.db_read import get_data, get_dataframe
+from util.db_util.db_read import get_dataframe
 
 
 class log:
@@ -15,9 +15,6 @@ class log:
         self.type = type
         self.fid = fid
 
-    @staticmethod
-    def get_all():
-        return get_data(log)
 
     @staticmethod
     def get_dataframe():

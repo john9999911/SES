@@ -1,5 +1,5 @@
 from datetime import datetime
-from util.db_util.db_read import get_data
+from util.db_util.db_read import get_dataframe
 
 
 class clazz:
@@ -18,9 +18,6 @@ class clazz:
         self.clazzid = clazzid
         self.fid = fid
 
-    @staticmethod
-    def get_all():
-        return get_data(clazz)
 
     @staticmethod
     def get_dataframe():

@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from util.db_util.db_read import get_data, get_dataframe
+from util.db_util.db_read import get_dataframe
 
 
 class activity_log:
@@ -22,9 +22,6 @@ class activity_log:
         self.attend_time = attend_time
         self.fid = fid
 
-    @staticmethod
-    def get_all():
-        return get_data(activity_log)
 
     @staticmethod
     def get_dataframe():

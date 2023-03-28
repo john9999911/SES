@@ -15,9 +15,6 @@ class exam_library:
         self.paper_library_id = paper_library_id
         self.fid = fid
 
-    @staticmethod
-    def get_all():
-        return get_data(exam_library)
 
     @staticmethod
     def get_dataframe():

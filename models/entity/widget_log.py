@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from util.db_util.db_read import get_data, get_dataframe
+from util.db_util.db_read import get_dataframe
 
 
 class widget_log:
@@ -21,9 +21,6 @@ class widget_log:
         self.send_to_student = send_to_student
         self.fid = fid
 
-    @staticmethod
-    def get_all():
-        return get_data(widget_log)
 
     @staticmethod
     def get_dataframe():

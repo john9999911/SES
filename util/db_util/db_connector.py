@@ -1,5 +1,5 @@
 import os
-
+from sqlalchemy import create_engine
 import pymysql
 import yaml
 
@@ -8,18 +8,6 @@ import yaml
 def read_yml(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         return yaml.load(f, Loader=yaml.FullLoader)
-
-
-# 连接数据库
-def connect_db(db_config):
-    return pymysql.connect(
-        host=db_config['host'],
-        port=db_config['port'],
-        user=db_config['user'],
-        password=db_config['password'],
-        db=db_config['db'],
-        charset=db_config['charset'],
-    )
 
 
 # 执行sql语句
@@ -40,5 +28,9 @@ def get_con():
     # 读取配置
     db_config = read_yml(path)
     # 连接数据库
-    conn = connect_db(db_config)
+
+    engine = create_engine('mysql+pymysql://' + str(db_config['user']) + ':' + str(db_config['password']) + '@' + str(
+        db_config['host']) + ':' + str(db_config['port']) + '/' + str(db_config['db']) + '?charset=' + str(
+        db_config['charset']))
+    conn = engine.connect()
     return conn

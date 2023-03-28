@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from util.db_util.db_read import get_data, get_dataframe
+from util.db_util.db_read import get_dataframe
 
 
 class person:
@@ -16,9 +16,6 @@ class person:
         self.role = role
         self.fid = fid
 
-    @staticmethod
-    def get_all():
-        return get_data(person)
 
     @staticmethod
     def get_dataframe():

@@ -1,5 +1,5 @@
 from datetime import datetime
-from util.db_util.db_read import get_data
+from util.db_util.db_read import get_dataframe
 
 
 class course_data:
@@ -20,9 +20,6 @@ class course_data:
         self.data_id = data_id
         self.fid = fid
 
-    @staticmethod
-    def get_all():
-        return get_data(course_data)
 
     @staticmethod
     def get_dataframe():

@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from util.db_util.db_read import get_data, get_dataframe
+from util.db_util.db_read import get_dataframe
 
 
 class work_library:
@@ -15,10 +15,6 @@ class work_library:
         self.isDeleted = isDeleted
         self.work_library_id = work_library_id
         self.fid = fid
-
-    @staticmethod
-    def get_all():
-        return get_data(work_library)
 
     @staticmethod
     def get_dataframe():

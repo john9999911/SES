@@ -1,6 +1,6 @@
 import datetime
 
-from util.db_util.db_read import get_data, get_dataframe
+from util.db_util.db_read import get_dataframe
 
 
 class exam_relation:
@@ -21,9 +21,6 @@ class exam_relation:
         self.paper_library_id = paper_library_id
         self.fid = fid
 
-    @staticmethod
-    def get_all():
-        return get_data(exam_relation)
 
     @staticmethod
     def get_dataframe():

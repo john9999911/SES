@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from util.db_util.db_read import get_data, get_dataframe
+from util.db_util.db_read import get_dataframe
 
 
 class work_relation:
@@ -18,9 +18,6 @@ class work_relation:
         self.work_library_id = work_library_id
         self.fid = fid
 
-    @staticmethod
-    def get_all():
-        return get_data(work_relation)
 
     @staticmethod
     def get_dataframe():

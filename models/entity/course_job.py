@@ -15,9 +15,6 @@ class course_job:
         self.job_id = job_id
         self.fid = fid
 
-    @staticmethod
-    def get_all():
-        return get_data(course_job)
 
     @staticmethod
     def get_dataframe():

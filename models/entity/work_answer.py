@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from util.db_util.db_read import get_data, get_dataframe
+from util.db_util.db_read import get_dataframe
 
 
 class work_answer:
@@ -22,9 +22,6 @@ class work_answer:
         self.fid = fid
         self.clazzid = clazzid
 
-    @staticmethod
-    def get_all():
-        return get_data(work_answer)
 
     @staticmethod
     def get_dataframe():

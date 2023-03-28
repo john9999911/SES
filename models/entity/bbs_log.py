@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from util.db_util.db_read import get_data
+from util.db_util.db_read import get_dataframe
 
 
 class bbs_log:
@@ -20,9 +20,6 @@ class bbs_log:
         self.ip = ip
         self.fid = fid
 
-    @staticmethod
-    def get_all():
-        return get_data(bbs_log)
 
     @staticmethod
     def get_dataframe():

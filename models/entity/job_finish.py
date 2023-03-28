@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from util.db_util.db_read import get_data, get_dataframe
+from util.db_util.db_read import get_dataframe
 
 
 class job_finish:
@@ -15,9 +15,6 @@ class job_finish:
         self.clazzid = clazzid
         self.fid = fid
 
-    @staticmethod
-    def get_all():
-        return get_data(job_finish)
 
     @staticmethod
     def get_dataframe():
